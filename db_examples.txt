@@ -1,0 +1,84 @@
+--JOINTURE Afficher le pays (depuis la Table 'Country') avec la region et la ville
+SELECT C.Name, V.Region, V.City 
+FROM Victim AS V, Country AS C 
+WHERE V.Country = C.Id_Country;
+
+--DATETIME format  (année-mois-jour heure:minute:seconde)
+--Afficher les informations concerant la date et l'heure
+SELECT DATE_FORMAT(Date_Compromise, "%a %d %b %Y à %H:%i") AS "Date of compromisation"
+FROM Victim;
+
+/* ----------------------- */
+
+--Exemple d'insertion dans la Table 'Victim'
+INSERT INTO Victim (Date_Compromise, IP_Address, ISP, Country, Region, City, Timezone, User_Name, Computer_Name, Ident, Secret_Key)
+VALUES ('2020-03-28 13:30', '45.256.32.12', 'SFR RadioTelecom', 'US', 'Texas', 'Otawa', 'Texas/Etat-Unis', 'babou', 'DESKTOP-OIUIYG7H', '5678-56789-9876', 'ofoeokjfhgpaoirhtuionvyehdklopdehdfshcgu=');
+
+--Pareil mais sans avoir l'adresse IP
+INSERT INTO Victim (Date_Compromise, User_Name, Computer_Name, Ident, Secret_Key)
+VALUES ('2020-03-28 13:30', 'babou', 'DESKTOP-OIUIYG7H', '5678-56789-9876', 'ofoeokjfhgpaoirhtuionvyehdklopdehdfshcgu=');
+
+/* ----------------------- */
+
+--Afficher toutes les infos en ayant l'adresse IP
+SELECT DATE_FORMAT(V.Date_Compromise, "%a %d %b %Y à %H:%i") AS "Date of compromise", V.IP_Address, V.ISP, C.Name AS Country, V.Region, V.City, V.Timezone, V.User_Name, V.Computer_Name, V.Ident, V.Secret_Key 
+FROM Victim AS V, Country AS C
+WHERE V.Country = C.Id_Country;
+
+--Afficher toutes les infos sans l'adresse IP
+SELECT DATE_FORMAT(V.Date_Compromise, "%a %d %b %Y à %H:%i") AS "Date of compromise", V.IP_Address, V.ISP, C.Name AS Country, V.Region, V.City, V.Timezone, V.User_Name, V.Computer_Name, V.Ident, V.Secret_Key 
+FROM Victim AS V, Country AS C
+WHERE V.Country = C.Id_Country;
+
+--Afficher toutes les entrée avec et sans IP
+SELECT DATE_FORMAT(Date_Compromise, "%a %d %b %Y à %H:%i") AS "Date of compromise", IP_Address, ISP, Country, Region, City, Timezone, User_Name, Computer_Name, Ident, Secret_Key
+FROM Victim;
+
+--Nombre de victimes par pays
+SELECT COUNT(V.Country) AS "Nb Victims", C.Name AS "Country"
+FROM Victim AS V, Country AS C
+WHERE V.Country = C.Id_Country 
+GROUP BY V.Country;
+
+--Nombre de victimes au total
+SELECT COUNT(*) AS "Tot Nb Victims"
+FROM Victim;
+
+--Afficher les informations essentiels (la date, heure, id et clé secrète)
+SELECT DATE_FORMAT(Date_Compromise, "%a %d %b %Y à %H:%i") AS "Date of compromisation", Ident, Secret_Key
+FROM Victim;
+
+--Afficher les informations essentiels (la date, heure, id et clé secrète) grâce à son identifiant
+SELECT DATE_FORMAT(Date_Compromise, "%a %d %b %Y à %H:%i") AS "Date of compromisation", Ident, Secret_Key
+FROM Victim
+WHERE Ident = '5678-56789-9876';
+
+--Afficher les informations d'une victime grâce à son identifiant
+SELECT DATE_FORMAT(Date_Compromise, "%a %d %b %Y à %H:%i") AS "Date of compromisation", IP_Address, ISP, Country, Region, City, Timezone, User_Name, Computer_Name, Ident, Secret_Key
+FROM Victim
+WHERE Ident = '5678-56789-9876';
+
+--Afficher les informations d'une victime (avec adresse IP) grâce à son identifiant
+SELECT DATE_FORMAT(V.Date_Compromise, "%a %d %b %Y à %H:%i") AS "Date of compromisation", V.IP_Address, V.ISP, C.Name AS Country, V.Region, V.City, V.Timezone, V.User_Name, V.Computer_Name, V.Ident, V.Secret_Key 
+FROM Victim AS V, Country AS C
+WHERE V.Country = C.Id_Country
+AND V.Ident = '5678-56789-9876';
+
+--Afficher le nom du pays à partir de son code
+SELECT Name
+FROM Country
+WHERE Id_Country = 'FR';
+
+--Afficher tous les ID
+SELECT Ident
+FROM Victim;
+
+--Supprimer une entrée via l'identifiant
+DELETE
+FROM Victim
+WHERE Ident = '5678-56789-9876';
+
+--Supprimer toutes les entrées
+DELETE
+FROM Victim;
+
