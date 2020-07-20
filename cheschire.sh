@@ -65,7 +65,7 @@ function setup(){
 }
 
 function create_ransomware(){
-	rm -rf $CURRENT_PATH/output/* && touch $CURRENT_PATH/output
+	rm -rf $CURRENT_PATH/output/* && mkdir $CURRENT_PATH/output
 	rm -f $CURRENT_PATH/arg.txt
 	rm -f $CURRENT_PATH/ext.txt
 
