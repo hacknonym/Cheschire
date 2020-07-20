@@ -145,9 +145,9 @@ remote server (our HTTP server) will be displayed in plain text while sending in
 
 ## Why use Bat_to_Exe_Convertor to compile
 For all this to work, we need to have 3 files
-- the decryption program (.exe),
+- the decryption program (.exe)
 - a wallpaper (.jpg)
-- a decoy program (.exe).
+- a decoy program (.exe)
 
 It is impossible to integrate these three files inside an executable (e.g. in a
 C program), it would then be necessary to download them from the Internet
