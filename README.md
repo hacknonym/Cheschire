@@ -78,7 +78,7 @@ To compile the generated files, use [**Bat_to_Exe_Convertor**.](https://bat-to-e
 Creating a new user
 ```bash
 mysql> CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
-mysql> GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
+mysql> GRANT ALL PRIVILEGES ON Cheschire.* TO 'newuser'@'localhost';
 ```
 Once the new user has been created, specify credentials in the **ident.txt** file
 <br />**Default credentials**
