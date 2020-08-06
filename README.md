@@ -169,6 +169,7 @@ download our files.
 ![List victims from the DATABASE](https://user-images.githubusercontent.com/55319869/87853926-5e79ff00-c90e-11ea-80a9-730a1275804e.png)
 ![Number of victims](https://user-images.githubusercontent.com/55319869/87853928-5fab2c00-c90e-11ea-81ec-f220e7daf716.png)
 ![Instructions](https://user-images.githubusercontent.com/55319869/87875372-2091df00-c9d1-11ea-9e25-59b2647b3bb7.png)
+![Decryptor](https://user-images.githubusercontent.com/55319869/89562030-a8714900-d819-11ea-8df5-2d9a3e31d2d9.PNG)
 
 ## License
 GNU General Public License v3.0 for Cheschire
