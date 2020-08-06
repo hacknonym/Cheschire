@@ -55,7 +55,7 @@ while [ true ] ; do
       read -p "Push ENTER to continue" enter;;
 
     5 )
-      mysql --user=$MYSQL_USER --password="$MYSQL_PASS" --database=$DATABASE_NAME -e "SELECT DATE_FORMAT(Date_Compromise, \"%a %d %b %Y à %H:%i\") AS \"Date of compromise\", Ident, Secret_Key FROM Victim;"
+      mysql --user=$MYSQL_USER --password="$MYSQL_PASS" --database=$DATABASE_NAME -e "SELECT DATE_FORMAT(Date_Compromise, \"%a %d %b %Y à %H:%i\") AS \"Date of compromise\", Ident, Secret_Key FROM Victim ORDER BY Date_Compromise DESC;"
       read -p "Push ENTER to continue" enter;;
 
     6 )

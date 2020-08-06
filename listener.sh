@@ -13,13 +13,13 @@ DATABASE_NAME=$(cat ident.txt | grep -e "DBNAME" | cut -d ' ' -f 2)
 MYSQL_USER=$(cat ident.txt | grep -e "USERNAME" | cut -d ' ' -f 2)
 MYSQL_PASS=$(cat ident.txt | grep -e "PASSWORD" | cut -d ' ' -f 2)
 
-cshtlm="arg.txt"
+schtml="arg.txt"
 
 while [ true ] ; do
   echo -e "[+] Download in progress..."
-  wget $1 -O $cshtlm 1> /dev/null 2>&1
+  wget $1 -O $schtml 1> /dev/null 2>&1
   clear && echo -e "[>] $1"
-  for i in $(cat $cshtlm | grep -A3 "QUERYSTRING" | grep -e "keypair" | cut -d '>' -f 3 | cut -d '<' -f 1) ; do
+  for i in $(cat $schtml | grep -A3 "QUERYSTRING" | grep -e "keypair" | cut -d '>' -f 3 | cut -d '<' -f 1) ; do
     echo -e "$i" > decode.txt
     content=$(base64 -d decode.txt)
 
