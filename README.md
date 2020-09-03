@@ -114,8 +114,8 @@ DATABASE NAME: **Cheschire**
 **Country** TABLE
 | Field | Type | Null | Key | Default | Extra |
 | --- | --- | --- | --- |--- | --- |
-| Id_Country | varchar(2) | NO | PRI | NULL | --- |
-| Name | varchar(60) | NO | --- | NULL | --- |
+| Id_Country | varchar(2) | NO | PRI | NULL |  |
+| Name | varchar(60) | NO |  | NULL |  |
 
 ## Why use RequestBin to send information
 It is quite possible to send the information through an HTTP request directly to our server without going through a service provider
