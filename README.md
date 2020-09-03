@@ -3,6 +3,7 @@
 [![Version](https://img.shields.io/badge/Version-1.0-blue.svg?style=for-the-badge)]()
 [![Language](https://img.shields.io/badge/Bash-4.2%2B-brightgreen.svg?style=for-the-badge)]()
 [![Available](https://img.shields.io/badge/Available-Debian-orange.svg?style=for-the-badge)]()
+[![Available](https://img.shields.io/badge/Target-Windows-blue.svg?style=for-the-badge)]()
 [![Download](https://img.shields.io/badge/Size-260K-brightgreen.svg?style=for-the-badge)]()
 [![License](https://img.shields.io/badge/License-GPL%20v3%2B-red.svg?style=for-the-badge)](https://github.com/hacknonym/Cheschire/blob/master/LICENSE)
 
@@ -42,7 +43,7 @@ sudo chmod +x listener.sh
 sudo chmod +x cheschire.sh
 sudo ./cheschire.sh
 ```
-To compile the generated files, use [**Bat_to_Exe_Convertor**.](https://bat-to-exe-converter-x64.en.softonic.com/) 
+To compile the generated files, use [**Bat_to_Exe_Converter**.](https://bat-to-exe-converter-x64.en.softonic.com/) 
 
 ## Operating steps
 **Ransomware (.exe) steps**
@@ -98,17 +99,17 @@ DATABASE NAME: **Cheschire**
 | Field | Type | Null | Key | Default | Extra |
 | --- | --- | --- | --- |--- |--- |
 | Id_Victim | int(11) | NO | PRI | NULL | auto_increment |
-| Date_Compromise | datetime | YES | --- | NULL | --- |
-| IP_Address | varchar(15) | YES | --- | NULL | --- |
-| ISP | text | YES | --- | NULL | --- |
-| Country | varchar(2) | YES | MUL | NULL | --- |
-| Region | text | YES | --- | NULL | --- |
-| City | text | YES | --- | NULL | --- |
-| Timezone | varchar(100) | YES | --- | NULL | --- |
-| User_Name | varchar(50) | YES | --- | NULL | --- |
-| Computer_Name | varchar(50) | YES | --- | NULL | --- |
-| Ident | varchar(17) | YES | --- | NULL | --- |
-| Secret_Key |  varchar(45) | YES | --- | NULL | --- |
+| Date_Compromise | datetime | YES |  | NULL |  |
+| IP_Address | varchar(15) | YES |  | NULL |  |
+| ISP | text | YES |  | NULL |  |
+| Country | varchar(2) | YES | MUL | NULL |  |
+| Region | text | YES |  | NULL |  |
+| City | text | YES |  | NULL |  |
+| Timezone | varchar(100) | YES |  | NULL |  |
+| User_Name | varchar(50) | YES |  | NULL |  |
+| Computer_Name | varchar(50) | YES |  | NULL |  |
+| Ident | varchar(17) | YES |  | NULL |  |
+| Secret_Key |  varchar(45) | YES |  | NULL |  |
 
 **Country** TABLE
 | Field | Type | Null | Key | Default | Extra |
